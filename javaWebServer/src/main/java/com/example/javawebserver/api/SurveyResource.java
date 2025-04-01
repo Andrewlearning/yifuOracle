@@ -22,7 +22,6 @@ import java.util.HashSet;
 import java.util.Collections;
 
 import com.example.javawebserver.model.SurveyDataModel;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Path("/surveys")
 @Produces(MediaType.APPLICATION_JSON)
@@ -62,11 +61,9 @@ public class SurveyResource {
             ConfigFileAuthenticationDetailsProvider provider = new ConfigFileAuthenticationDetailsProvider(CONFIG_PATH, "DEFAULT");
             LoggingClient loggingClient = new LoggingClient(provider);
 
-            ObjectMapper mapper = new ObjectMapper();
-            String jsonData = mapper.writeValueAsString(data);
 
             LogEntry logEntry = LogEntry.builder()
-                    .data(jsonData)
+                    .data(data.toJsonString())
                     .id(UUID.randomUUID().toString())
                     .time(new Date())
                     .build();

@@ -29,6 +29,8 @@ public class JavaWebServerApplication extends Application<JavaWebServerConfigura
             configuration.getTemplate(),
             configuration.getDefaultName()
         );
+
+        // register resources(API endpoints)
         environment.jersey().register(resource);
         environment.jersey().register(new SurveyResource());
     }
