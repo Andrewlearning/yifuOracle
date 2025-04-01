@@ -52,10 +52,10 @@ public class SurveyResource {
     @POST
     public Response receiveSurvey(SurveyDataModel data) {
         if (!isValidSurveyData(data)) {
-            System.out.println("Received survey: " + data);
+            System.out.printf("Received survey: %s%n%n", data);
             return Response.status(Response.Status.BAD_REQUEST).entity("Invalid survey input").build();
         }
-        System.out.println("Received survey: " + data);
+        System.out.printf("Received survey: %s%n%n", data);
         
         try {
             ConfigFileAuthenticationDetailsProvider provider = new ConfigFileAuthenticationDetailsProvider(CONFIG_PATH, "DEFAULT");
@@ -87,6 +87,7 @@ public class SurveyResource {
                     .build();
 
             PutLogsResponse response = loggingClient.putLogs(putLogsRequest);
+            System.out.printf("Received putLogs response: %s%n%n", response);
             loggingClient.close();
         } catch (Exception e) {
             e.printStackTrace();
