@@ -1,6 +1,0 @@
-com/example/javawebserver/JavaWebServerApplication.class
-com/example/javawebserver/config/JavaWebServerConfiguration.class
-com/example/javawebserver/api/HelloWorldResource.class
-com/example/javawebserver/api/SurveyResource.class
-com/example/javawebserver/model/SurveyDataModel.class
-com/example/javawebserver/api/SurveyResource$1.class

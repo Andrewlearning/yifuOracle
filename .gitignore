@@ -1,3 +1,11 @@
 .DS_Store
 .vscode
 .idea
+
+# Maven
+javaWebServer/target/
+javaWebServer/dependency-reduced-pom.xml
+
+# Compiled files
+*.jar
+*.war
